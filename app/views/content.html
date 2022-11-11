@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Content – {{ serviceName }} – GOV.UK Prototype Kit
+
+
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Enter a business or payee name
+      </h1>
+
+      <p>Enter a name, town, county or postcode</p>
+      <p style="color:Grey;">Example: Pine Grove Farm, Alex Smith, Hartlepool, Durham, TS2</p>
+
+
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
+          </label>
+        </h1>
+        <input class="govuk-input" id="event-name" name="event-name" type="text">
+
+        <button class="govuk-button" data-module="govuk-button">
+          Search
+        </button>
+
+      </div>
+
+      <p>You can also <a href="#">download all scheme payment data (.CSV, 345KB)</a>.</p>
+
+    </div>
+  </div>
+
+{% endblock %}
