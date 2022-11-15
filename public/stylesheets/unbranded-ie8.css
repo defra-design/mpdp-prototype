@@ -5886,3 +5886,63 @@ x:-moz-any-link {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+.search-btn {
+  margin-left: -6px;
+  box-shadow: none;
+  height: 40px;
+  width: auto;
+}
+
+.govuk-input {
+  width: 66.6%;
+}
+
+.subtitle {
+  color: #505a5f;
+}
+
+.margin-left-20 {
+  margin-left: 20px;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.margin-top-60 {
+  margin-top: 60px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.margin-bottom-15 {
+  margin-bottom: 15px;
+}
+
+.padding-top-10 {
+  padding-top: 10px;
+}
+
+.section-break-heading, .section-break-heading--lightgray {
+  height: 2px;
+  border-width: 0;
+  background-color: gray;
+}
+
+.section-break-heading--lightgray {
+  background-color: lightgray;
+}
+
+.search-results-amount {
+  margin: 10px 40px;
+  color: black;
+  float: right;
+}
+
+.grid-column-two-one {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
