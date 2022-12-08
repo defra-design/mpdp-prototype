@@ -123,7 +123,7 @@ module.exports = [
     town: 'Balscote',
     county_council: 'Oxfordshire',
     part_postcode: 'OX15',
-    amount: '£21,250'
+    amount: '£20,000'
   },
   {
     payee_name: 'TR Smith Farms',
