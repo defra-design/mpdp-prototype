@@ -8606,3 +8606,10 @@ x:-moz-any-link {
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
+
+
+
+.grid-column-two-one-test {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
