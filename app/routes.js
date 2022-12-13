@@ -1,9 +1,9 @@
-const api = require('./backend/api')
-
-const express = require('express')
+const express = require('express');
 const router = express.Router()
 
-// Add your routes here - above the module.exports line
+const api = require('./backend/api')
+const { detailsModel } = require('./models/details')
+
 router.get('/results', function(req, res) {
     const { searchString } = req.query
     const { results, total } = api.search(searchString)
@@ -12,6 +12,10 @@ router.get('/results', function(req, res) {
         results,
         searchQuery: searchString
     });
+});
+
+router.get('/details', function(req, res) {
+    res.render('details', detailsModel(req.query));
 });
 
 module.exports = router

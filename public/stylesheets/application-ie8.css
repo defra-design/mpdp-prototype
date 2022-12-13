@@ -5946,3 +5946,130 @@ x:-moz-any-link {
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
+
+.grid-column-three-one {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 5px;
+}
+
+.mpdp-panel {
+  background-color: #1d70b8;
+  padding: 35px;
+}
+
+details.description {
+  display: flex;
+}
+
+details.description[open] summary::after {
+  content: attr(data-open);
+}
+
+details.description:not([open]) summary::after {
+  content: attr(data-close);
+}
+
+details.description > summary {
+  list-style: none;
+  color: #1d70b8;
+  text-decoration: underline;
+  float: right;
+  cursor: pointer;
+  margin-left: auto;
+  width: 90px;
+  text-align: right;
+  padding: 5px;
+}
+
+details.description > summary :hover {
+  text-decoration-thickness: from-font;
+}
+
+details.description > summary::marker,
+details.description > summary::-webkit-details-marker {
+  display: none;
+  color: #1d70b8;
+  text-decoration: underline;
+  float: right;
+  cursor: pointer;
+  margin-left: auto;
+  width: 90px;
+  text-align: right;
+  padding: 5px;
+}
+
+.mpdp-text-color-white {
+  color: #ffffff;
+}
+
+.mpdp-text-color-light-grey {
+  color: #f3f2f1;
+}
+
+.mpdp-text-color-dark-grey {
+  color: #505a5f;
+}
+
+.mpdp-bg-color-light-grey {
+  background-color: #f3f2f1;
+}
+
+.mpdp-border-color-light-grey {
+  border-color: #f3f2f1;
+}
+
+.mpdp-margin-top-negative-3 {
+  margin-top: -15px;
+}
+
+.mpdp-text-align-right {
+  text-align: right;
+}
+
+.mpdp-text-underline {
+  text-decoration: underline;
+}
+
+.mpdp-details-summary {
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.mpdp-list-marker-small {
+  font-size: 0.85rem;
+}
+
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+}
+.form-inline {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  z-index: 1;
+}
+
+.form-inline button {
+  width: auto;
+  box-shadow: none;
+  height: 40px;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
