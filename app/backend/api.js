@@ -1,4 +1,5 @@
 const dummyResults = require('../data/mockResults.js')
+const dummyDetails = require('../data/mockDetails.js')
 
 const includes = (string1, string2) => string1.toLowerCase().includes(string2.toLowerCase())
 
@@ -22,6 +23,11 @@ const search = (searchQuery, offset = 0, limit = 50) => {
     }
 }
 
+const getPaymentDetails = (payee_name) => {
+    return dummyDetails.find(x => x.payee_name.toLowerCase().includes(payee_name.toLowerCase()))
+}
+
 module.exports = {
-    search
+    search,
+    getPaymentDetails
 }
