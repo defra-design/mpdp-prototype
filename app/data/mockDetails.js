@@ -109,7 +109,7 @@ module.exports = [
     },
     {
     scheme: "Landscape Recovery",
-    scheme_detail: "restore water bodies, rivers and floodplains",
+    scheme_detail: "restoring water bodies, rivers and floodplains",
     activity_detail: "",
     amount: '10000'
     }]
@@ -129,13 +129,13 @@ module.exports = [
     },
     {
     scheme: "Farming Equipment and Technology Fund",
-    scheme_detail: "Horticulture",
+    scheme_detail: "horticulture",
     activity_detail: "",
     amount: '10000'
     },
     {
     scheme: "Farming Equipment and Technology Fund",
-    scheme_detail: "Forestry",
+    scheme_detail: "forestry",
     activity_detail: "",
     amount: '10000'
     }]
@@ -187,7 +187,7 @@ module.exports = [
     },
     {
       scheme: "Landscape Recovery",
-      scheme_detail: "improve flood mitigation",
+      scheme_detail: "improving flood mitigation",
       activity_detail: "",
       amount: '10000'
     }]
@@ -207,7 +207,7 @@ module.exports = [
     },
     {
     scheme: "Farming Equipment and Technology Fund",
-    scheme_detail: "Forestry",
+    scheme_detail: "forestry",
     activity_detail: "",
     amount: '10000'
     },
@@ -239,13 +239,13 @@ module.exports = [
     },
     {
     scheme: "Farming Equipment and Technology Fund",
-    scheme_detail: "Livestock Handling and weighing equipment",
+    scheme_detail: "livestock Handling and weighing equipment",
     activity_detail: "",
     amount: '10000'
     },
     {
       scheme: "Farming Equipment and Technology Fund",
-      scheme_detail: "Other Livestock equipment",
+      scheme_detail: "other Livestock equipment",
       activity_detail: "",
       amount: '10000'
     },
@@ -289,13 +289,13 @@ module.exports = [
     },
     {
     scheme: "Farming Equipment and Technology Fund",
-    scheme_detail: "Livestock Handling and weighing equipment",
+    scheme_detail: "livestock Handling and weighing equipment",
     activity_detail: "",
     amount: '10000'
     },
     {
       scheme: "Farming Equipment and Technology Fund",
-      scheme_detail: "Other Livestock equipment",
+      scheme_detail: "other Livestock equipment",
       activity_detail: "",
       amount: '10000'
     },
@@ -313,7 +313,7 @@ module.exports = [
     },
     {
       scheme: "New Entrants",
-      scheme_detail: "Rural land-based improvements",
+      scheme_detail: "rural land-based improvements",
       activity_detail: "",
       amount: '10000'
     }]
