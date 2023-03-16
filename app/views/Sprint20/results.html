@@ -1,14 +1,14 @@
 {% extends "layout.html" %}
 
-{% from "./macros/search-box.html"                       import searchBox %}
-{% from "./macros/search-results.html"                   import searchResults %}
+{% from "../macros/search-box.html"                       import searchBox %}
+{% from "../macros/search-results.html"                   import searchResults %}
 
 {% block pageTitle %}{{ serviceName }}{% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
         text: "Back",
-        href: "/search"
+        href: "search"
       }) }}
 {% endblock %}
 
@@ -30,7 +30,7 @@
             name: 'searchString',
             inputmode: 'string',
             buttonText: 'Search',
-            href: '/results',
+            href: 'results',
             labelText: 'Search',
             value: searchQuery
         }) }}

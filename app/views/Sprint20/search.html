@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% from "./macros/search-box.html" import searchBox %}
+{% from "../macros/search-box.html" import searchBox %}
 
 {% block pageTitle %}{{ serviceName }}{% endblock %}
 
@@ -19,7 +19,7 @@
       name: 'searchString',
       inputmode: 'string',
       buttonText: 'Search',
-      href: '/results'
+      href: 'results'
     }) }}
 
     <p>You can also <a href="#">download all scheme payment data (.CSV, 345KB)</a>.</p>
