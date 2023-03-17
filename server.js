@@ -24,7 +24,8 @@ const config = require('./app/config.js')
 const documentationRoutes = require('./docs/documentation_routes.js')
 const prototypeAdminRoutes = require('./lib/prototype-admin-routes.js')
 const packageJson = require('./package.json')
-const routes = require(`${process.cwd()}/app/routes.js`)
+const routesV1 = require(`${process.cwd()}/app/routes/v1/routes.js`)
+const routesV2 = require(`${process.cwd()}/app/routes/v2/routes.js`)
 const utils = require('./lib/utils.js')
 const extensions = require('./lib/extensions/extensions.js')
 const { projectDir } = require('./lib/utils')
@@ -237,14 +238,8 @@ if (promoMode === 'true') {
   })
 }
 
-// Load routes (found in app/routes.js)
-if (typeof (routes) !== 'function') {
-  console.log(routes.bind)
-  console.log('Warning: the use of bind in routes is deprecated - please check the Prototype Kit documentation for writing routes.')
-  routes.bind(app)
-} else {
-  app.use('/', routes)
-}
+app.use('/v1', routesV1)
+app.use('/v2', routesV2)
 
 if (useDocumentation) {
   // Clone app locals to documentation app locals
