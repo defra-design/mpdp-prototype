@@ -1,0 +1,311 @@
+{% extends "./layout.html" %}
+
+{% block pageTitle %}
+Find farm and land payment data 
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+
+  {{ govukHeader({
+    serviceName: serviceName,
+    serviceUrl: "/v2/start.html"
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Find farm and land payment data
+      </h1>
+
+      <p>Check agricultural scheme payments to farmers and land managers in England.</p>
+    </div>
+
+  </div>
+
+
+
+  
+
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds app-mainstream-guide-body">
+      
+      <br>
+      
+      <div>
+        <h1 class="govuk-heading-xl">
+          Prototypes
+        </h1>
+  
+        <h2 class="govuk-heading-m">
+          View the progression of the service
+        </h2>
+  
+        <p><strong>Latest prototype</strong></p>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Sprint 21
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+        
+            <a href="Sprint21/start.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+              View prototype</a>
+  
+          <p><strong>Password:</strong> MPDP</p>
+          <p>This version explores solutions for scalable views. It shows how the service will evolve to accommodate more data across multiple years.</p>
+          
+          <p><strong>User testing</strong></p>
+          <p>Focus:<br>
+          • Search journey (simplified)<br>
+          • Clarity of the Details page<br>
+          • Usability of tabs for the Details page<br>
+          • Content of the Summary box on the Details page</p>
+        
+          <p><strong>Key design changes</strong></p>
+          <p>
+          • Change 1<br>
+          • Change 2<br>
+          • Change 3<br>
+          • Change 4</p>
+  
+        </div>
+        </details>
+  
+  
+  
+        <p><strong>Previous prototypes</strong></p>
+  
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Sprint 20
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+  
+            <a href="Sprint20/start.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+              View prototype</a>
+           
+            <p><strong>Password:</strong> MPDP</p>
+            <p>This version explores solutions for scalable views. It shows how the service will evolve to accommodate more data across multiple years.</p>
+            
+            <p><strong>User testing</strong></p>
+            <p>Focus:<br>
+            • Search journey (simplified)<br>
+            • Clarity of the Details page<br>
+            • Usability of tabs for the Details page<br>
+            • Content of the Summary box on the Details page</p>
+          
+            <p><strong>Key design changes</strong></p>
+            <p>
+            • Change 1<br>
+            • Change 2<br>
+            • Change 3<br>
+            • Change 4</p>
+  
+  
+  
+          </div>
+        </details>
+      </div>
+
+      <div>
+      <h1 id="Vision" class="govuk-heading-xl">
+        Vision
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        Making Defra’s payments accessible and transparent
+      </h2>
+      
+      <p>Check agricultural scheme payments to farmers and land managers in England.</p>
+      <p>We publish agricultural scheme payments to farmers and land managers in England. These schemes form part of the Farming and Countryside Programme.</p>
+      <br>
+      <br>
+      </div>
+
+      <div>
+      <h1 id="Background" class="govuk-heading-xl">
+        Background
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        Moving from CAP regulations to GOV.UK
+      </h2>
+      
+      <p>Defra is now in charge of ensuring the transparency of the farming support payments in England. This work requires a concerted approach with the interests of both users and regulators at the centre of our effort.</p>
+      
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What data we publish
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Now that we are no longer in the EU, the rules around what we must publish have changed. This means that we are no longer part of the UK Co-ordinating Body service’s Common Agricultural Policy (CAP) schemes.</p>
+          
+          Instead, under the Agriculture (Financial Assistance) Regulations 2021 we publish data for the:
+          
+          <p>• Sustainable Farming Incentive pilot<br>
+          • Farming Equipment and Technology Fund</p>
+
+          <p>We only publish data when recipients of these schemes have received total agricultural scheme payments of £1,250 or more.</p>
+
+          <strong>The data includes:</strong>
+
+          <p>• full names of agreement holders and businesses<br>
+          • partial postcodes, post towns and districts where the agreement holder is resident or located<br>
+          • total payments received by the agreement holder in the last financial year<br>
+          • a description of the activities financed by the relevant payments</p>
+
+          <p><strong>Tree Health Pilot Scheme</strong></p>
+          
+          We publish the total figure paid through the scheme as a single amount.</div>
+      </details>
+    </div>
+      
+      
+      
+      
+      
+      
+    <div>
+
+
+      <a href="/v2/search" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+
+
+      <br>
+      <br>
+    </div>
+<div>
+      <h1 id="User Needs" class="govuk-heading-xl">
+        Key User Needs
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        As a user, I need to...
+      </h2>
+      
+      <p>• find out <strong>who the payment was made to</strong> so that I know who is carrying out the activity on the farm.</p>
+      <p>• find out <strong>what the payment was for</strong> so that I can understand what types of activity are being conducted on the farm.</p>
+      <p>• <strong>find the service easily</strong> so that I can access the data that I need.</p>
+      <p>• have a clear explanation of <strong>what the payment descriptions mean</strong> so that I can be confident I have understood the data I am using.</p>
+      <p>• view the <strong>information published about payments made</strong> to me or my company so that I can be assured it is accurate.</p>
+      <p>• <strong>correct any errors in the data published about me</strong> so that I can exercise my statutory rights of rectification.</p>
+      <p>• <strong>search for farms and businesses with similar names</strong> so that I don't have to conduct multiple searches when I don't know the exact name of the business I'm looking for (fuzzy matching).</p>
+      <br>
+
+      <br>
+    </div>
+<div>
+      <h1 id="Links" class="govuk-heading-xl">
+        Links
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        Access our working environments
+      </h2>
+      
+      <p><strong>MURAL</strong></p>
+      <p>Mural provides an accessible and centralised location for cross-functional teams to think visually and drive increased communication, coordination, and transparency while working together.</p>
+      <p>• <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">MURAL board 1: User Research</a></p>
+      <p>• <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">MURAL board 2: Usability Testing</a></p>
+      <p>• <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">MURAL board 3: Delivery</a></p>
+      <p>• <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">MURAL board 4: Product</a></p>
+
+      <br>
+
+      <p><strong>FIGMA</strong></p>
+      <p>Figma is a collaborative web application for interface design, with additional offline features enabled by desktop applications for macOS and Windows.</p>
+      <p>• <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">FIGMA board 1</a></p>
+      <br>
+    </div>
+
+
+
+
+
+
+
+      
+    </div>
+
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Quick Links
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="Sprint21/start.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+                Latest Prototype</a>
+            </li>
+            <li>
+              <a href="#Vision">
+                Vision
+              </a>
+            </li>
+            <li>
+              <a href="#Background">
+                Background
+              </a>
+            </li>
+            <li>
+              <a href="#Team">
+                Team
+              </a>
+            </li>
+            <li>
+              <a href="#User Groups">
+                User Groups
+              </a>
+            </li>
+            <li>
+              <a href="#User Needs">
+                User Needs
+              </a>
+            </li>
+            <li>
+              <a href="#Links">
+                Links
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+  </main>
+</div>
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
