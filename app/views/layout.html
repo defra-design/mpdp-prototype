@@ -33,7 +33,7 @@
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
 
 {% block head %}
-  {% include "../includes/head.html" %}
+  {% include "./includes/head.html" %}
 {% endblock %}
 
 {% block pageTitle %}
@@ -43,9 +43,9 @@
 {% block header %}
   {# Set serviceName in config.js. #}
   {{ govukHeader({
-    homepageUrl: "/v1/",
+    homepageUrl: "/v2/",
     serviceName: serviceName,
-    serviceUrl: "/v1/",
+    serviceUrl: "/v2/",
     containerClasses: "govuk-width-container"
   }) }}
 {% endblock %}
@@ -74,7 +74,7 @@
 
 {% block bodyEnd %}
   {% block scripts %}
-    {% include "../includes/scripts.html" %}
+    {% include "./includes/scripts.html" %}
     {% block pageScripts %}{% endblock %}
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
