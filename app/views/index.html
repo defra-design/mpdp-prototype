@@ -1,13 +1,17 @@
-
-{% extends "layout.html" %}
+{% extends "./layout.html" %}
 
 {% block pageTitle %}
 Find farm and land payment data 
 {% endblock %}
 
 {% block header %}
-  <!-- Blank header with no service name for this page -->
-  {{ govukHeader() }}
+  <!-- Blank header with no service name for the start page -->
+
+  {{ govukHeader({
+    serviceName: serviceName,
+    serviceUrl: "/v2/start.html"
+  }) }}
+
 {% endblock %}
 
 
@@ -51,12 +55,12 @@ Find farm and land payment data
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              Sprint 21
+              Version 1
             </span>
           </summary>
           <div class="govuk-details__text">
         
-            <a href="Sprint21/start.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+            <a href="v1/start.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
               View prototype</a>
   
           <p><strong>Password:</strong> MPDP</p>
@@ -86,12 +90,12 @@ Find farm and land payment data
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              Sprint 20
+              Version 2
             </span>
           </summary>
           <div class="govuk-details__text">
   
-            <a href="Sprint20/start.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+            <a href="v2/start.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
               View prototype</a>
            
             <p><strong>Password:</strong> MPDP</p>
@@ -180,120 +184,12 @@ Find farm and land payment data
     <div>
 
 
-
-      <h1 id="Team" class="govuk-heading-xl">
-        Team
-      </h1>
-
-      <h2 class="govuk-heading-m">
-        Our team is agile and multi-disciplinary
-      </h2>
-      
-      <p>We work together to learn what our users need and how we can deliver a simple and powerful service.</p>
-
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Name</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Role</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Samuel Hoskin</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Delivery manager</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Gavin Clarke</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Product Manager</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Siddharth Godhania</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Front End Developer</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Velmurugan Muthu</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Back End Developer</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Shan Sunkugari</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Quality Assurance</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Ajmal Khan</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Architect</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Sharad Srivastav</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Architect</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Kate Jehan</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">User Researcher</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">John Morton</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Content Designer</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Mikael Metthey</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Interaction Designer</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Pamela Frost</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Legislator</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Michael Sanders</th>
-            <td class="govuk-table__cell govuk-table__cell--numeric">Legislator</td>
-          </tr>
-        </tbody>
-      </table>
-      <br>
-      <br>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-<div>
-      <h1 id="User Groups" class="govuk-heading-xl">
-        User Groups
-      </h1>
-      
-      <p>We identified the key user groups during the discovery phase of the project. With their help, we designed the service based on their needs with special attention to usability and accessibility.</p>
-
-      <h2 class="govuk-heading-m">
-        Land owners and Farmers
-      </h2>
-      <p>• Looking for information that DEFRA has published about me or my business.</p>
-
-      <h2 class="govuk-heading-m">
-        Investigators
-      </h2>
-      <p>• Looking for factual information about different farming activities in England (e.g. Journalist or Academic).</p>
-
-      <h2 class="govuk-heading-m">
-        Farming and countryside developers
-      </h2>
-      <p>• Looking to identify (groups of) farmers who could be contacted to make changes to land for public interest (e.g. National Farmers Union Charity, Water and flood management).</p>
-      
-      <h2 class="govuk-heading-m">
-        Ad-hoc users
-      </h2>
-      <p>• Looking for information about what is going on around them (e.g. neighbouring farms).</p>
-      
-      <h2 class="govuk-heading-m">
-        Antagonists (anti-user)
-      </h2>
-      <p>• Looking for information about farms and land owners for nefarious purposes (e.g. fraud, theft, etc.).</p>
+      <a href="/v2/search" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
 
 
 

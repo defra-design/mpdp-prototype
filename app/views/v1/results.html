@@ -1,0 +1,52 @@
+{% extends "./layout.html" %}
+
+{% from "./macros/search-box.html"                       import searchBox %}
+{% from "./macros/search-results.html"                   import searchResults %}
+
+{% block pageTitle %}{{ serviceName }}{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+        text: "Back",
+        href: "/v1/search"
+      }) }}
+{% endblock %}
+
+{% set mainClasses = "padding-top-10" %}
+{% block content %}
+{% if total %}
+  <h1 class="govuk-heading-l margin-bottom-15">Results for ‘{{ searchQuery }}’</h1>
+{% else %}
+  <h1 class="govuk-heading-l margin-bottom-15">We found no results for ‘{{ searchQuery }}’</h1>
+{% endif %}
+
+<p>Check results or search again.</p>
+
+ <div class="govuk-grid-row">    
+    <div class="govuk-grid-column-one-third" style="padding-top: 15px">
+        {{ searchBox({
+            inputClass: 'govuk-input',
+            id: 'searchBox',
+            name: 'searchString',
+            inputmode: 'string',
+            buttonText: 'Search',
+            href: '/v1/results',
+            labelText: 'Search',
+            value: searchQuery
+        }) }}
+    </div>
+
+      <div class="govuk-grid-column-two-thirds">
+          {{ searchResults({
+            results: results,
+            total: total
+          }) }}
+          {# {{ govukPagination({
+            previous: previous,
+            next: next
+          }) 
+        }} #}
+      </div>
+
+  </div>
+{% endblock %}
