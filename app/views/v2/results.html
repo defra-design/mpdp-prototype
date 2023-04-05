@@ -1,52 +1,66 @@
-{% extends "./layout.html" %}
+{% extends './layout.html' %}
 
-{% from "./macros/search-box.html"                       import searchBox %}
-{% from "./macros/search-results.html"                   import searchResults %}
+{% from "govuk/components/checkboxes/macro.njk"         import govukCheckboxes %}
+{% from "./macros/search-form.njk"                       import searchForm %}
+{% from "./macros/search-results.njk"                   import searchResults %}
+{% from "govuk/components/pagination/macro.njk"         import govukPagination %}
+{% from "govuk/components/error-summary/macro.njk"      import govukErrorSummary %}
 
-{% block pageTitle %}{{ serviceName }}{% endblock %}
+{% block pageTitle %}{%if errorList %} Error: {%endif%} {{ headingTitle }} - {{ serviceName }} - GOV.UK{% endblock %}
 
 {% block beforeContent %}
+  {% if errorList %}
+    {{govukErrorSummary ({
+      "titleText": "There is a problem",
+      "errorList": errorList,
+      "classes": 'govuk-!-margin-top-4 govuk-!-margin-bottom-2'
+    }) }}
+  {% endif %}
   {{ govukBackLink({
-        text: "Back",
-        href: "/v2/search"
-      }) }}
+    text: "Back",
+    href: "/v2/search"
+  }) }}
 {% endblock %}
 
-{% set mainClasses = "padding-top-10" %}
+{% set mainClasses = "govuk-!-padding-top-2 mpdp-overflow-wrap" %}
 {% block content %}
-{% if total %}
-  <h1 class="govuk-heading-l margin-bottom-15">Results for ‘{{ searchQuery }}’</h1>
-{% else %}
-  <h1 class="govuk-heading-l margin-bottom-15">We found no results for ‘{{ searchQuery }}’</h1>
-{% endif %}
 
-<p>Check results or search again.</p>
+  {% set resultsText = ('Results for' if total > 0 or errorList else 'We found no results for') %}
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-3">{{ resultsText }} ‘{{ searchString }}’</h1>
 
- <div class="govuk-grid-row">    
-    <div class="govuk-grid-column-one-third" style="padding-top: 15px">
-        {{ searchBox({
-            inputClass: 'govuk-input',
-            id: 'searchBox',
-            name: 'searchString',
-            inputmode: 'string',
-            buttonText: 'Search',
-            href: '/v2/results',
-            labelText: 'Search',
-            value: searchQuery
-        }) }}
+  <p>Check results or search again.</p>
+
+  <div class="govuk-grid-row">    
+    <div class="govuk-grid-column-one-third">
+      {{ searchForm({
+        inputClass: 'govuk-input',
+        id: 'resultsSearchInput',
+        name: 'searchString',
+        inputmode: 'string',
+        buttonText: 'Search',
+        href: '/v2/results',
+        labelHTML: 'Search',
+        value: searchString,
+        errorList: errorList,
+        hiddenInputs: hiddenInputs,
+        filters: filters
+      }) }}
     </div>
+    <div class="govuk-grid-column-two-thirds">
+      {{ searchResults({
+        results: results,
+        total: total,
+        page: currentPage,
+        searchString: searchString,
+        sortBy: sortBy,
+        tags: tags
+      }) }}
 
-      <div class="govuk-grid-column-two-thirds">
-          {{ searchResults({
-            results: results,
-            total: total
-          }) }}
-          {# {{ govukPagination({
-            previous: previous,
-            next: next
-          }) 
-        }} #}
-      </div>
-
+     {{ govukPagination({
+        previous: previous,
+        next: next,
+        landmarkLabel: 'Pagination Navigation'
+      }) }}
+    </div>
   </div>
 {% endblock %}
