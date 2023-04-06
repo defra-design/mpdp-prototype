@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router()
 
-const api = require('../../backend/api')
-const { detailsModel } = require('../../models/details')
+const api = require('./backend/api')
+const { detailsModel } = require('./models/details')
 
 router.get('/start', function(req, res) {
     res.render('v1/index');

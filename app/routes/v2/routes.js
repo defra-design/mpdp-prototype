@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router()
 
-const api = require('../../backend/api')
-const { detailsModel } = require('../../models/details')
+const { detailsModel } = require('./models/details')
+const { createModel } = require('./models/searchResultsModel')
 
 router.get('/start', function(req, res) {
     res.render('v2/index');
@@ -10,13 +10,14 @@ router.get('/start', function(req, res) {
 
 
 router.get('/results', function(req, res) {
-    const { searchString } = req.query
-    const { results, total } = api.search(searchString)
-    res.render('v2/results', { 
-        total,
-        results,
-        searchQuery: searchString
-    });
+    req.query.page = req.query.page ?? 1
+    req.query.pageId = req.query.pageId ?? ''
+    req.query.schemes = req.query.schemes ?? [] 
+    req.query.amounts = req.query.amounts ?? [] 
+    req.query.counties = req.query.counties ?? [] 
+    req.query.sortBy = req.query.sortBy ?? 'score' 
+
+    res.render('v2/results', createModel(req.query));
 });
 
 router.get('/details', function(req, res) {
