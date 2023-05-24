@@ -26,6 +26,7 @@ const prototypeAdminRoutes = require('./lib/prototype-admin-routes.js')
 const packageJson = require('./package.json')
 const routesV1 = require(`${process.cwd()}/app/routes/v1/routes.js`)
 const routesV2 = require(`${process.cwd()}/app/routes/v2/routes.js`)
+const routesV3 = require(`${process.cwd()}/app/routes/v3/routes.js`)
 const utils = require('./lib/utils.js')
 const extensions = require('./lib/extensions/extensions.js')
 const { projectDir } = require('./lib/utils')
@@ -240,6 +241,7 @@ if (promoMode === 'true') {
 
 app.use('/v1', routesV1)
 app.use('/v2', routesV2)
+app.use('/v3', routesV3)
 
 if (useDocumentation) {
   // Clone app locals to documentation app locals

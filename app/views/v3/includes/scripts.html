@@ -1,0 +1,12 @@
+<!-- Javascript -->
+<script src="/public/v3/javascripts/jquery-1.11.3.js"></script>
+
+{% for scriptUrl in extensionConfig.scripts %}
+  <script src="{{scriptUrl}}"></script>
+{% endfor %}
+
+<script src="/public/v3/javascripts/application.js"></script>
+
+{% if useAutoStoreData %}
+  <script src="/public/v3/javascripts/auto-store-data.js"></script>
+{% endif %}
