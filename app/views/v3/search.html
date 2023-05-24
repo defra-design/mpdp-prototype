@@ -1,0 +1,45 @@
+{% extends './layout.html' %}
+
+{% from "./macros/search-form.njk"                       import searchForm %}
+{% from "govuk/components/error-summary/macro.njk"      import govukErrorSummary %}
+{% from "./macros/related-content.njk"                   import relatedContent %}
+
+{% block pageTitle %}{%if errorList %} Error: {%endif%} {{ pageTitle }} - {{ serviceName }} - GOV.UK{% endblock %}
+
+{% block content %}
+{% if errorList %}
+  {{govukErrorSummary ({
+    "titleText": "There is a problem",
+    "errorList": errorList,
+    "classes": 'govuk-!-margin-bottom-7'
+  }) }}
+{% endif %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Search for a business or agreement holder</h1>
+
+    {{ searchForm({
+      inputClass: 'govuk-input',
+      id: 'searchInput',
+      name: 'searchString',
+      inputmode: 'string',
+      buttonText: 'Search',
+      href: '/v3/results',
+      errorList: errorList,
+      hiddenInputs: [{
+        id: 'pageId',
+        name: 'pageId',
+        value: 'index'
+      }],
+      labelHTML: '<p>Enter either a name or a location</p>',
+      hintHTML: '<span class="subtitle" id="searchHint">Example: Pine Grove Farm or Gloucestershire or GL55</span>',
+      inputAttributes: "aria-describedby='searchHint'"
+    }) }}
+
+    <p>You can also <a id='downloadAllLink' href="/downloadall">download all scheme payment data (.CSV, 193KB)</a></p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    {{relatedContent()}}
+  </div>
+</div>
+{% endblock %}

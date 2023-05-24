@@ -7,6 +7,6 @@
     "v6Assets": "app/v6/assets",
     "nodeModules": "node_modules",
     "lib": "lib",
-    "versions": ["v1", "v2"]
+    "versions": ["v1", "v2", "v3"]
   }
 }
