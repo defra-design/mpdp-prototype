@@ -129,7 +129,27 @@ const getPaymentDetails = (payee_name) => {
 	);
 };
 
+const getSearchSuggestions = (searchString) => {
+	const searchResults = dummyResults.filter(
+		(x) =>
+			includes(x.payee_name, searchString) ||
+			includes(x.town, searchString) ||
+			includes(x.county_council, searchString) ||
+			includes(x.part_postcode, searchString)
+	);
+	
+	if(!searchResults.length) {
+		return { rows: [], count: 0 };
+	}
+
+	return {
+		rows: searchResults.slice(0, 6),
+		count: searchResults.length
+	}
+}
+
 module.exports = {
 	getPaymentData,
 	getPaymentDetails,
+	getSearchSuggestions
 };

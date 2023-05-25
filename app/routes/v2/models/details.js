@@ -27,44 +27,40 @@ const detailsModel = ({ payeeName, searchString, page }) => {
   }
   
   let farmerTotal = 0
-  let schemeTotal = 0
   farmerDetails.schemes.forEach((scheme) => {
     const amount = parseFloat(scheme.amount)
-    
     farmerTotal += amount
-    schemeTotal += amount
 
     const schemeDetails = {
       name: scheme.scheme_detail,
-      activityLevel: scheme.activity_detail,
       amount: getReadableAmount(amount),
     }
 
-    const index = summary.schemes?.findIndex(x => x?.name === scheme.scheme)
-    if(index === -1) {
+    const schemeData = summary.schemes.find(x => x?.name.toLowerCase() === scheme.scheme.toLowerCase())
+    if(!schemeData) {
       const schemeData = getSchemeStaticData(scheme.scheme)
-      schemeTotal = amount;
       summary.schemes.push({
         name: scheme.scheme,
         description: schemeData?.description || '',
         link: schemeData?.link || '',
-        total: getReadableAmount(schemeTotal),
+        total: amount,
+        readableTotal: getReadableAmount(amount),
         schemeTypes: [schemeDetails]
       })
     }
     else {
-      summary.schemes[index].total = getReadableAmount(schemeTotal)
-      summary.schemes[index].schemeTypes.push(schemeDetails)
+      schemeData.total += amount
+      schemeData.readableTotal = getReadableAmount(schemeData.total)
+      schemeData.schemeTypes.push(schemeDetails)
     }
   })
 
   summary.total = getReadableAmount(farmerTotal)
-	
   return {
 		summary,
-		searchString: searchString,
-		page
-  }
+    searchString: searchString,
+    page: page
+	}
 }
 
 module.exports = {
