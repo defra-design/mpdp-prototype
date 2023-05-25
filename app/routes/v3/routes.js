@@ -3,6 +3,7 @@ const router = express.Router()
 
 const { detailsModel } = require('./models/details')
 const { resultsModel } = require('./models/search/resultsModel')
+const { getSearchSuggestions } = require('./backend/api')
 
 router.get('/start', function(req, res) {
     res.render('v3/index');
@@ -21,7 +22,12 @@ router.get('/results', function(req, res) {
 });
 
 router.get('/details', function(req, res) {
+    req.query.page = req.query.page ?? 1
     res.render('v3/details', detailsModel(req.query));
+});
+
+router.get('/suggestions', function(req, res) {
+    res.status(200).send(getSearchSuggestions(req.query.searchString))
 });
 
 module.exports = router
